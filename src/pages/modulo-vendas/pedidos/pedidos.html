@@ -1,0 +1,56 @@
+<!--
+  Generated template for the PedidosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar color="tijuca">
+    <ion-title class="titulo">Pedidos
+    </ion-title>
+    <ion-buttons end>
+      <ion-icon name="refresh" (click)="sadc()" class="refresh"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="search">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar"></ion-searchbar>
+  </div>  <br><br><br> 
+    <div *ngFor="let item of items">
+      <ng-template [ngIf]="item.status == 'CANCELADO'" [ngIfElse]="limiteBaixo">
+        <ion-card class="redcard" (click)="e(item.id);  linkDetalhe();">
+          <ion-card-content class="redcard"> 
+            <span class="nome">{{item.nome}}</span>
+            <span hidden="">{{item.id}}</span><br>
+            <span class="preco">{{item.preco}}</span><br>
+            <span class="data">{{item.data}}</span>  
+            <span class="status">{{item.status}}</span>
+          </ion-card-content>
+        </ion-card>
+      </ng-template> 
+  
+      <ng-template #limiteBaixo>
+  
+  
+        <ion-card (click)="e(item.id); linkDetalhe();"> 
+          <ion-card-content> 
+            <span class="nome">{{item.nome}}</span>
+            <span hidden="">{{item.id}}</span><br>
+            <span class="preco">{{item.preco}}</span><br>
+            <span class="data">{{item.data}}</span>  
+            <span class="status">{{item.status}}</span>
+          </ion-card-content>
+        </ion-card>
+  
+  
+      </ng-template>
+  
+    </div> 
+
+</ion-content>

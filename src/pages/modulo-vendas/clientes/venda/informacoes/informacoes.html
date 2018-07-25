@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="title">Informações</ion-title>
+    <ion-buttons end>
+      <ion-icon name="refresh" (click)="linkSincronizar()" class="refresh"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Cliente: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].cliente}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Endereço: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].endereco}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Telefone: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].telefone}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Grupo de Produto: </span>
+      </ion-label>
+      <ion-textarea type="text" value="{{items[0].grupo_produto}}" readonly></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Categoria: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].categoria}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Limite de Crédito: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].credito}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Saldo Disponível: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].saldo}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="inputs"> Prazo: </span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].prazo}}" readonly></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

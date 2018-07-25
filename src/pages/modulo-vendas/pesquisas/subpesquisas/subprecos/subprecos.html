@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="tijuca">
+    <ion-title class="titulo">Pesquisas
+
+      <button ion-button color="dark" clear (click)="adicionar()" class="button">
+        <ion-icon name="add" class="refresh"></ion-icon>
+      </button>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>
+        <span class="inputs">Produto</span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].produto}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>
+        <span class="inputs">Supermercado</span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].mercadinho}}" readonly> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>
+        <span class="inputs">Observação</span>
+      </ion-label>
+      <ion-input type="text" value="{{items[0].observacao}}" readonly> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <!-- NÃO mexe (¬.¬) -->
+    </ion-item>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,66 @@
+page-detalhe { 
+    ion-list{
+        min-width: 96vw; 
+        width: 96vw;  
+    }
+    .tituloPage{
+        margin-left: 10vw;  
+        width: 50vw;
+    } 
+    .refresh{ 
+        font-size: 10vw;
+        color: white;
+        margin-right:2vw;
+    } 
+    .card{
+        background-color: #306B98;  
+        color: white;
+    }
+    .redcard{
+        background-color: #306B98;  
+        color: white;
+    }
+    .titulo{
+        white-space: normal;
+        font-weight: bold;
+        color: white; 
+    }
+    .conteudo{ 
+        color: white; 
+        white-space: normal;
+    }
+
+    .galinha{           
+        height: 8vh;  
+        width: 12vw; 
+        position: absolute;
+    }
+    .quadraedo{ 
+        z-index: 3;
+        margin-left: 15vw;
+    }
+    .nome{
+        font-size:2.3vh;
+        color: #306B98;
+        font-weight: bold; 
+        white-space: normal;
+        padding-top:-5vh; 
+        position: relative;  
+     }
+    .preco{  
+        position: relative; 
+        font-weight: bold; 
+        font-size:2.1vh; 
+     }
+    .quantidade{
+        position: relative ;  
+        font-weight: bold; 
+        font-size:2.1vh;
+    } 
+    .logo{
+        color: #306B98;
+        font-size: 7vh;
+        margin-left:18vw;
+        margin-top: 3vh; 
+    } 
+}

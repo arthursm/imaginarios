@@ -1,0 +1,82 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title class="title">Pedido</ion-title>
+        <ion-buttons end>
+            <ion-icon name="refresh" (click)="linkSincronizar()" class="refresh"></ion-icon>
+        </ion-buttons>
+    </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                <span class="inputs">Nº Pedido:</span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].pedido}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Data: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].data}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Cheagada: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].chegada}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Limite de Crédito: </span>
+            </ion-label>
+            <ion-textarea type="text" value="{{items[0].credito}}" readonly></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Saldo: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].saldo}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Categoria: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].categoria}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Quantidade de item: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].qnt_item}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Vlaor total: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].valor}}" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>
+                <span class="inputs"> Data Entrega: </span>
+            </ion-label>
+            <ion-input type="text" value="{{items[0].data_entrega}}" readonly></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>

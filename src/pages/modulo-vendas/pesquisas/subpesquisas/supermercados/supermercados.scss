@@ -1,0 +1,46 @@
+page-supermercados { 
+    .tituloPage{ 
+        margin-left: 10vw;  
+        width: 50vw;
+    }
+    .codigo{ 
+        max-width:15vw;
+        text-align: center; 
+        color: #135F8C;  
+    }
+    .nome{
+        font-weight: bold;
+        color: #135F8C;   
+        max-width: 80vw;
+        width: 80vw;
+        margin-left: 10vw;
+        text-align: center;
+        margin-top:-3vh; 
+    } 
+    .endereco{  
+        white-space: normal;  
+        text-align: center;
+        width: 80vw;
+        margin-top:-3vh; 
+        margin-left: 10vw;
+    }
+    .local{ 
+        font-weight: bold;
+        color: black; 
+        white-space: normal;   
+        text-align: center;
+        margin-left:10vw;
+        width: 80vw; 
+        margin-top:-3vh; 
+    }  
+    .check{  
+        color: rgb(32, 155, 20);  
+        width:5vw;
+        float: right;
+    }
+    .titulo{
+        font-weight: bold;
+        color: #135F8C; 
+        white-space: normal;
+    } 
+}

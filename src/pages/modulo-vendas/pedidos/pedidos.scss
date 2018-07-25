@@ -1,0 +1,28 @@
+page-pedidos {
+    ion-card{  
+        min-width: 95vw; 
+        width: 95vw; 
+        font-weight: bold;  
+    }
+    ion-card-header{
+        white-space: normal;
+    }
+    .status{ 
+        float: right;
+    } 
+    .refresh{ 
+        font-size: 10vw;
+        color: white;
+        margin-right:2vw;
+    }
+    .redcard{
+        background-color: red; 
+        font-weight: bold;
+        color: white;
+    }
+    .search{
+       position: fixed;  
+       min-width: 100%; 
+       width: 100%;  
+    } 
+}

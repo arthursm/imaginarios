@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="tijuca">
+    <ion-title class="tituloPage">Pesquisas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="search">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar"></ion-searchbar>
+  </div>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of items; let i = index" (click)="e(item.codigo)">
+      <div class="codigo">
+        {{item.codigo}}
+      </div>
+      <div class="nome">
+        {{item.nome}}
+      </div>  
+      <div class="check">
+      <ion-buttons end>
+        <ion-icon class="redcard" name="md-checkbox"></ion-icon>
+      </ion-buttons> 
+      </div>
+      <br>
+      <div class="endereco">
+        {{item.endereco}} 
+      </div>
+      <br>
+      <div class="local">
+       {{item.local}}
+      </div>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

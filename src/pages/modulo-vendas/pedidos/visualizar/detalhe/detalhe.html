@@ -1,0 +1,37 @@
+<!--
+  Generated template for the DetalhesClientesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+    <ion-navbar color="tijuca">  
+      <ion-title class="tituloPage">Detalhes
+      </ion-title> 
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+
+        <div *ngFor="let item of produto">   
+  
+            <ion-icon class="logo" name="person" item-start large (click)="cliente()"></ion-icon>
+            <ion-icon class="logo" name="calendar" item-start large (click)="data()"></ion-icon>
+            <ion-icon class="logo" name="logo-usd" item-start large (click)="valor()"></ion-icon>
+    </div> 
+    <ion-list> 
+      <ion-item *ngFor="let item of items; let i = index">
+        <img class="galinha" src="assets/images/galinha.svg" />
+        <div class="quadraedo">
+          <span class="nome"> {{item.nome}}</span>
+          <br>
+          <span class="preco"> {{item.preco}}</span>
+          <br>
+          <span class="quantidade"> {{item.qtd}}</span>
+        </div>
+      </ion-item>     
+  
+    </ion-list>
+  </ion-content>

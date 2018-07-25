@@ -1,0 +1,36 @@
+page-pesquisas {
+    .botao{
+        background-color: #306B98;
+        font-size:3vh;
+        height:10vh;
+        margin-top:3vh; 
+        font-weight: bold;
+    } 
+    .botao:hover{
+        background-color: red;
+        font-size:3vh;
+        height:10vh;
+        margin-top:3vh; 
+        font-weight: bold;
+    } 
+    .titulo{
+        margin-left: 10vw;  
+        width: 50vw;
+    }
+    .imagem{
+        position: absolute;
+        max-width: 5vh; 
+        margin-top: -0.5vh;
+        margin-left: 25vw;
+    }
+    .column{
+        position: absolute;
+        background-color: red;
+        width: 10vw;        
+    }
+    .refresh{ 
+        font-size: 10vw;
+        color: white;
+        margin-right:2vw;
+    }
+}

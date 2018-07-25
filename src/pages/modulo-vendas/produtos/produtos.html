@@ -1,0 +1,30 @@
+<ion-header>
+
+    <ion-navbar color="tijuca">
+      <ion-title class="titulo">Produtos
+      </ion-title>
+      <ion-buttons end>
+        <ion-icon name="refresh" (click)="sadc()" class="refresh"></ion-icon>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content>
+  
+    <ion-searchbar (ionInput)="getItems($event)" placeholder = "Buscar"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let item of items; let i = index" (click)="e(item.codigo)">
+        <img class="galinha" src="assets/images/galinha.svg" />
+        <div class="quadraedo">
+          <span class="nome"> {{item.codigo}}</span>
+          <br>
+          <span class="preco"> {{item.descricao}}</span>
+          <!-- <br>
+          <span class="quantidade"> {{item.qtd}}</span> -->
+        </div>
+      </ion-item> 
+    </ion-list>
+    
+  </ion-content>

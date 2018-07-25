@@ -1,0 +1,56 @@
+<ion-header>
+
+  <ion-navbar color="tijuca">
+    <ion-title class="titulo">Clientes </ion-title>
+    <ion-buttons end>
+      <ion-icon name="refresh" (click)="sadc()" class="refresh"></ion-icon>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="search">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar"></ion-searchbar>
+  </div>
+  <br>
+  <br>
+  <div style="margin-top:5vh;">
+    <div *ngFor="let item of items">
+      <ng-template [ngIf]="item.limiteCredito >= 1000" [ngIfElse]="limiteBaixo">
+        <ion-card class="redcard" (click)="e(item.codigoCliente); presentActionSheet()">
+          <ion-card-header class="redcard">
+            {{item.nome}}
+          </ion-card-header>
+          <ion-card-content>
+            <span class="cnpj">{{item.cnpj}}</span>
+
+
+            <span class="cod">{{item.codigoCliente}}</span>
+          </ion-card-content>
+        </ion-card>
+      </ng-template>
+
+      <ng-template #limiteBaixo>
+
+
+        <ion-card (click)="e(item.codigoCliente); presentActionSheet()">
+          <ion-card-header>
+            {{item.nome}}
+          </ion-card-header>
+          <ion-card-content>
+            <span class="cnpj">{{item.cnpj}}</span>
+
+            <!-- <span>{{item.limite}}</span> -->
+
+            <span class="cod">{{item.codigoCliente}}</span>
+          </ion-card-content>
+        </ion-card>
+
+
+      </ng-template>
+
+    </div>
+  </div>
+</ion-content>

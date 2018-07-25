@@ -1,0 +1,25 @@
+page-subprodutos {
+    ion-list{ 
+        min-width: 96vw; 
+        width: 96vw; 
+        white-space: normal;     
+    }
+    .titulo{
+        margin-left: 10vw;  
+        width: 50vw;
+    }
+    .refresh{ 
+        font-size: 10vw;
+        color: white;
+        margin-right:2vw;
+    }
+    .nome{
+        white-space: normal; 
+        color: #306B98;
+        font-weight: bold;   
+        text-align: left;
+        white-space: normal;
+        min-width: 96vw; 
+        width: 96vw;  
+    }
+}

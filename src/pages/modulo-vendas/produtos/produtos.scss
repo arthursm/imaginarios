@@ -1,0 +1,61 @@
+page-produtos {
+
+    .slideTop{ 
+        width: 96vw;  
+        margin-top: 10vh;
+    }   
+    .botao{
+        width: 93vw;
+        margin-left: 3.5vw;
+    }
+    .titulo{
+        margin-left: 10vw;  
+        width: 50vw;
+    }
+    .galinha{           
+        height: 8vh;  
+        width: 12vw; 
+        position: absolute;
+    }
+    .quadraedo{ 
+        z-index: 3;
+        margin-left: 15vw;
+    }
+    .nome{
+        font-size:2.3vh;
+        color: #306B98;
+        font-weight: bold; 
+        white-space: normal;
+        padding-top:-5vh; 
+        position: relative;  
+     }
+    .preco{  
+        position: relative; 
+        font-weight: bold; 
+        font-size:2.1vh; 
+     }
+    .quantidade{
+        position: relative ;  
+        font-weight: bold; 
+        font-size:2.1vh;
+    } 
+    ion-list{
+        max-width: 96.5vw;
+    } 
+    .imagem{
+        position: absolute;
+        max-width: 5vh; 
+        margin-top: -0.5vh;
+        margin-left: 25vw;
+    }
+    .column{
+        position: absolute;
+        background-color: red;
+        width: 10vw;        
+    }
+    .refresh{ 
+        font-size: 10vw;
+        color: white;
+        margin-right:2vw;
+    }
+}

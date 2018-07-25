@@ -1,0 +1,56 @@
+page-subprecos {
+    .titulo{ 
+        margin-left: 10vw;  
+        width: 50vw; 
+    }  
+    .inputs{
+        color:#306B98;        
+        font-weight: bolder;
+        white-space: normal;
+    }  
+    ion-list{
+        width:96.6vw;
+    }
+    ion-textarea {  
+        margin-left:2vw;
+    }
+    .observacao{
+        color:#306B98;        
+        font-weight: bolder;
+        margin-left:3vw;
+    }
+    .refresh{ 
+        font-size: 10vw;
+        color: white;
+        margin-right:2vw;
+        z-index: 5; 
+    }
+    .clique{        
+        height: 1vw;  
+        width: 5vw; 
+        background-color:red;
+    }
+    .button{
+        position: absolute;
+        margin-top: -1vh;
+        margin-left: 20vw;
+    }
+    .button:active{
+        position: absolute;
+        background-color: #306B98;
+        margin-top: -1vh;
+        margin-left: 20vw;
+    }
+    .button:focus{
+        position: absolute;
+        background-color: #306B98;
+        margin-top: -1vh;
+        margin-left: 20vw;
+    }
+    .alerta {
+    background-color: red;
+        .inputs{
+        background-color: red;        
+        }
+    }
+}

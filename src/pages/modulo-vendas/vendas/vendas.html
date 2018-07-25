@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color="tijuca"> 
+    <ion-title class="titulo">Vendas</ion-title> 
+      <ion-icon name="ios-log-out" (click)="logout()" class="quit"></ion-icon> 
+  </ion-navbar>
+
+</ion-header>
+
+<div class="fixed-content">
+
+  <ion-content class="card-background-page">
+    <div class="grid">
+
+      <div class="row"> 
+        <div class="column" (click)="linkClientes()">Clientes
+          <button ion-fab class="fab" *ngIf = "abastecimentoPendentes > 0">{{abastecimentoPendentes}}</button>
+          <img class="imagem" src="assets/images/cliente.svg" />
+        </div>
+
+        <div class="column" (click)="linkPedidos()">Pedidos
+          <img class="imagem" src="assets/images/pedidos.svg" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column" (click)="linkPesquisas()">Pesquisas
+          <button ion-fab class="fab" *ngIf = "pesquisa > 0">{{Pesquisa}}</button>
+          <img class="imagem" src="assets/images/pesquisa.svg" />
+        </div>
+ <!-- *ngIf = "despesasPendente > 0" -->
+        <div class="column" (click)="linkProdutos()">Produtos
+          <button ion-fab class="fab" *ngIf = "Produtos > 0">{{Produtos}}</button>
+          <img class="imagem" src="assets/images/produto.svg" />
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="column" id="disabled"><!-- (click)="linkSincronizar()"> -->Sincronizar
+          <button ion-fab class="fab" *ngIf = "receitasPendentes > 0">{{receitasPendentes}}</button>
+          <img class="imagem" src="assets/images/sincronizar.svg" />
+        </div>
+
+        <div class="column" id="disabled">Tabelas
+          <div class="interna">
+          <img class="imagem" src="assets/images/tabela.svg" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </ion-content>
+</div>
