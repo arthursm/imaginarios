@@ -8,26 +8,11 @@
 <ion-content padding>
 
   <div class="geral" style="margin-top: 25%">
-    <img src="../assets/images/tijuca-logo.png" class="img">
-    <br>
-    <ion-item>
-      <ion-label stacked>
-        <span class="input">Usuário</span>
-      </ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>
-        <span class="input">Senha</span>
-      </ion-label>
-      <ion-input type="password" [(ngModel)]="senha"></ion-input>
-    </ion-item>
-    <br>
-
-  </div>
-
-  <button ion-button full color="tijuca"  (click)="joinChat()"> Login </button>  
+    <img src="../assets/images/tijuca-logo.png" class="img"> 
+  </div>  
+  <div class="google">
+  <button ion-button full color="tijuca"  (click)="loginGoogle()" icon-start>
+    <ion-icon name="logo-googleplus" ></ion-icon> Fazer login com o Google </button>  
   <!-- (click)="verificarLogin(usuario, senha)" -->
-
+  </div>
 </ion-content>

@@ -1,14 +1,18 @@
 page-login {
-  body{
-    overflow: hidden
+  ion-content{
+    // overflow: hidden;
+    // background-image: url('http://www.tijucaalimentos.com/site/wp-content/themes/adv/dist/body-pattern.f19b8b0e.png');
+    background-color:red;
   }
-  img{
-    margin: 0;
+  .img{  
     margin-top: 7vh;
     position: relative;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+  }
+  .google{
+    padding-top:35vh;
   }
 
 

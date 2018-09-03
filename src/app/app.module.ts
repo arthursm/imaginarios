@@ -34,10 +34,7 @@ import { InformacoesPage } from '../pages/modulo-vendas/clientes/venda/informaco
 import { IncluirPedidoPage } from '../pages/modulo-vendas/clientes/venda/pedido/incluir-pedido/incluir-pedido';
 import { ItensPage } from '../pages/modulo-vendas/clientes/venda/pedido/itens/itens';
 
-
-import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-const config: SocketIoConfig = { url: 'http://192.168.10.96:3001', options: {} };
-
+ 
 @NgModule({ 
   declarations: [
     MyApp, 
@@ -61,8 +58,7 @@ const config: SocketIoConfig = { url: 'http://192.168.10.96:3001', options: {} }
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    SocketIoModule.forRoot(config),
+    IonicModule.forRoot(MyApp), 
     CustomFormsModule,
     FormsModule,
     IonicStorageModule.forRoot(),

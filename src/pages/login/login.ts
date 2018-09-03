@@ -7,8 +7,7 @@ import { AlertController } from 'ionic-angular';
 import { VendasPage } from '../modulo-vendas/vendas/vendas';
  
 import { RecuperarDadosProvider } from '../../providers/recuperar-dados/recuperar-dados';
-import { HttpClient, HttpHeaders } from '@angular/common/http'; 
-import { Socket } from 'ng-socket-io';
+import { HttpClient, HttpHeaders } from '@angular/common/http';  
 
 import { SERVIDOR } from "../../util"; 
 
@@ -33,21 +32,12 @@ export class LoginPage {
     public alert: AlertController,
     public recuperarDados: RecuperarDadosProvider,
     public alertCtrl: AlertController,
-    public loadingCtrl: LoadingController,
-    private socket: Socket
+    public loadingCtrl: LoadingController 
   ) {
   }
 
   public hideForm: boolean = false;
-
-  joinChat() {
-
-    this.socket.connect();
-    this.socket.emit('set-nickname', this.nickname);
-    
-    this.socket.emit('add-message', { text: this.message });
-    this.message = 'sponge bob  is greatest'; 
-  }  
+ 
   
   erroLogin() {
     let alerta = this.alertCtrl.create({
@@ -167,21 +157,23 @@ export class LoginPage {
 
   } 
  
+  loginGoogle(){
+    this.navCtrl.push(VendasPage);
+  }
+
   ionViewDidLoad() {
     this.storageProvider.retornaLogin()
 
    this.storage.ready().then(() => {
      this.storage.get(this.storageProvider.chaveLogin).then((registros) => {
        this.login = registros;
-       console.log(this.login)
+       //console.log(this.login)
        this.storageProvider.retornaLogin()
 
-       if(this.login == null){
-        console.log('null')
+       if(this.login == null){ 
         this.storageProvider.retornaLogin()
 
-      }else{
-        console.log('Não-null')
+      }else{ 
         this.navCtrl.push(VendasPage)
         this.storageProvider.retornaLogin()
 
