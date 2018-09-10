@@ -5,6 +5,8 @@ import { PedidoPage } from '../clientes/venda/pedido/pedido/pedido';
 import { InformacoesPage } from '../clientes/venda/informacoes/informacoes';
 import { StorageProvider } from "../../../providers/storage/storage";
 import { RecuperarDadosProvider } from "../../../providers/recuperar-dados/recuperar-dados";
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 @IonicPage()
 @Component({
@@ -12,12 +14,15 @@ import { RecuperarDadosProvider } from "../../../providers/recuperar-dados/recup
   templateUrl: 'clientes.html'
 })
 
+
 export class ClientesPage {
 
   searchQuery: string = '';
   items: any[];
   cnpj: string[];
   id: string[];
+  private db: any;
+  data: any;
 
   constructor(
     public navCtrl: NavController,
@@ -26,11 +31,43 @@ export class ClientesPage {
     public alertCtrl: AlertController,
     public storage: StorageProvider,
     public dados: RecuperarDadosProvider) {
+    this.db = firebase.firestore();
     this.initializeItems();
+    this.loadData()
   }
 
-  sincronizar() {
-    this.dados.AtualizaClientes();
+  loadData() {
+    this.recuperarDadosClientes("clientes").then((e) => {
+      this.data = e;
+      console.log(this.data)
+    });
+  }
+
+  recuperarDadosClientes(collection: String) {
+    return new Promise((resolve, reject) => {
+      this.db.collection(collection).limit(5).get().then(
+        (querySnapshot) => {
+          let arr = [];
+          querySnapshot.forEach(
+            (function (doc) {
+              var obj = JSON.parse(JSON.stringify(doc.data()));
+              obj.$key = doc.id
+              console.log(obj)
+              arr.push(obj);
+            }))
+
+          if (arr.length > 0) {
+            console.log("Nenhum dado encontrado", arr);
+            resolve(arr);
+          } else {
+            console.log("Documento não encontrado");
+            resolve(null);
+          }
+        }
+      ).catch((error: any) => {
+        reject(error);
+      });
+    })
   }
 
   initializeItems() {

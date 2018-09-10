@@ -42,7 +42,7 @@
     "cordova-sqlite-storage": "^2.3.1",
     "debug-log": "^1.0.1",
     "es6-promise-plugin": "^4.2.2",
-    "firebase": "4.8.0",
+    "firebase": "^4.8.0",
     "ionic-angular": "3.7.1",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionic2-input-mask": "^0.18.6",

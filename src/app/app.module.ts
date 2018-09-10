@@ -33,8 +33,17 @@ import { PedidoPage } from '../pages/modulo-vendas/clientes/venda/pedido/pedido/
 import { InformacoesPage } from '../pages/modulo-vendas/clientes/venda/informacoes/informacoes';
 import { IncluirPedidoPage } from '../pages/modulo-vendas/clientes/venda/pedido/incluir-pedido/incluir-pedido';
 import { ItensPage } from '../pages/modulo-vendas/clientes/venda/pedido/itens/itens';
+import * as firebase from 'firebase';
 
- 
+firebase.initializeApp({
+  apiKey: "AIzaSyCQJ9BoVvSFHfKGJAqLhivOx6wu6lGROH8",
+  authDomain: "tijucamobilehomologacao.firebaseapp.com",
+  databaseURL: "https://tijucamobilehomologacao.firebaseio.com",
+  projectId: "tijucamobilehomologacao",
+  storageBucket: "tijucamobilehomologacao.appspot.com",
+  messagingSenderId: "778851398216"
+}); 
+
 @NgModule({ 
   declarations: [
     MyApp, 
