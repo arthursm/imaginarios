@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StorageProvider } from '../../../providers/storage/storage';
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 @IonicPage()
 @Component({
@@ -12,10 +14,57 @@ export class ProdutosPage {
   items: any[];
   codigo: string[];
   descricao: string[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storageProvider: StorageProvider) {
-    this.initializeItems()
+  private db: any;
+  data = [];
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public storageProvider: StorageProvider,
+  ) {
+    this.db = firebase.firestore();
+    this.initializeItems() 
+    this.loadData()
   }
   
+  loadData() {
+    this.recuperarDadosClientes("usuarios").then((e) => {
+      // this.data = e;  
+      // console.log(this.data);
+      // console.log(this.data[0]);
+    });
+  }
+
+  recuperarDadosClientes(collection: String) {
+    return new Promise((resolve, reject) => {
+      this.db.collection(collection).get().then(
+        (querySnapshot) => {
+          let arr = [];
+          querySnapshot.forEach(
+            (function (doc) {
+              var obj = JSON.parse(JSON.stringify(doc.data()));
+              obj.$key = doc.id              
+              console.log(obj) 
+              console.log(arr) 
+              arr.push(obj);
+              // this.data.push(obj);
+            }))
+            // console.log(arr[1].bairro);
+            this.data = arr;
+          if (arr.length > 0) { 
+          } else {
+            console.log("Documento não encontrado");
+            console.log(this.data);
+            resolve(null);
+          }
+        }
+      ).catch((error: any) => {
+        reject(error);
+      });
+    })
+  }
+
+
   initializeItems() {
     this.items = this.storageProvider.listaVendasProdutos
   }

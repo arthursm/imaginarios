@@ -9,12 +9,7 @@ page-pedidos {
     }
     .status{ 
         float: right;
-    } 
-    .refresh{ 
-        font-size: 10vw;
-        color: white;
-        margin-right:2vw;
-    }
+    }  
     .redcard{
         background-color: red; 
         font-weight: bold;
@@ -25,4 +20,8 @@ page-pedidos {
        min-width: 100%; 
        width: 100%;  
     } 
+    .titulo{
+        margin-left: 10vw;  
+        width: 50vw;
+    }
 }

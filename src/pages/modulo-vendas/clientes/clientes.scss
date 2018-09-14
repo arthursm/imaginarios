@@ -9,24 +9,21 @@ page-clientes {
     }
     .cod{ 
         float: right;
-    }
-
-    .refresh{ 
-        font-size: 10vw; 
-        color: white;
-        margin-right:2vw;
-    }
+    } 
     .redcard{
         background-color: red; 
         font-weight: bold;
         color: white;
     }
-
+    .titulo{
+        margin-left: 10vw;  
+        width: 50vw;
+    }
     .search{
        position: fixed;
        background: #FFFFFF;
        min-width: 100%;
        width: 100%;
-    }
+    } 
 
 }

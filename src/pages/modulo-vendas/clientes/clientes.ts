@@ -32,11 +32,11 @@ export class ClientesPage {
     public storage: StorageProvider,
     public dados: RecuperarDadosProvider) {
     this.db = firebase.firestore();
-    this.initializeItems();
-    // this.loadData()
+    this.initializeItems(); 
+    this.loadData()
   }
 
-  ionViewDidEnter() {
+  loadData() {
     this.recuperarDadosClientes("clientes").then((e) => {
       // this.data = e;  
       // console.log(this.data);
@@ -46,14 +46,14 @@ export class ClientesPage {
 
   recuperarDadosClientes(collection: String) {
     return new Promise((resolve, reject) => {
-      this.db.collection(collection).where('bairro', '==', 'AEROLANDIA').limit(5).get().then(
+      this.db.collection(collection).limit(15).get().then(
         (querySnapshot) => {
           let arr = [];
           querySnapshot.forEach(
             (function (doc) {
               var obj = JSON.parse(JSON.stringify(doc.data()));
               obj.$key = doc.id              
-              // console.log(obj.nome) 
+              // console.log(obj) 
               arr.push(obj);
               // this.data.push(obj);
             }))
