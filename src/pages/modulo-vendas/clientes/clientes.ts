@@ -22,7 +22,7 @@ export class ClientesPage {
   cnpj: string[];
   id: string[];
   private db: any;
-  data: any;
+  data = [];
 
   constructor(
     public navCtrl: NavController,
@@ -33,32 +33,33 @@ export class ClientesPage {
     public dados: RecuperarDadosProvider) {
     this.db = firebase.firestore();
     this.initializeItems();
-    this.loadData()
+    // this.loadData()
   }
 
-  loadData() {
+  ionViewDidEnter() {
     this.recuperarDadosClientes("clientes").then((e) => {
-      this.data = e;
-      console.log(this.data)
+      // this.data = e;  
+      // console.log(this.data);
+      // console.log(this.data[0]);
     });
   }
 
   recuperarDadosClientes(collection: String) {
     return new Promise((resolve, reject) => {
-      this.db.collection(collection).limit(5).get().then(
+      this.db.collection(collection).where('bairro', '==', 'AEROLANDIA').limit(5).get().then(
         (querySnapshot) => {
           let arr = [];
           querySnapshot.forEach(
             (function (doc) {
               var obj = JSON.parse(JSON.stringify(doc.data()));
-              obj.$key = doc.id
-              console.log(obj)
+              obj.$key = doc.id              
+              // console.log(obj.nome) 
               arr.push(obj);
+              // this.data.push(obj);
             }))
-
-          if (arr.length > 0) {
-            console.log("Nenhum dado encontrado", arr);
-            resolve(arr);
+            // console.log(arr[1].bairro);
+            this.data = arr;
+          if (arr.length > 0) { 
           } else {
             console.log("Documento não encontrado");
             resolve(null);
@@ -74,11 +75,7 @@ export class ClientesPage {
 
     this.items = this.storage.listaClientes
   }
-
-  e(item) {
-    console.log(item)
-  }
-
+ 
 
   getItems(ev: any) {
 

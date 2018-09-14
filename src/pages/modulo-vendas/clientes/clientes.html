@@ -17,7 +17,8 @@
   <br>
   <br>
   <div style="margin-top:5vh;">
-    <div *ngFor="let item of items">
+    <div *ngFor="let item of data">
+
       <ng-template [ngIf]="item.limiteCredito >= 1000" [ngIfElse]="limiteBaixo">
         <ion-card class="redcard" (click)="e(item.codigoCliente); presentActionSheet()">
           <ion-card-header class="redcard">
