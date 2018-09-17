@@ -44,9 +44,6 @@ export class SupermercadosPage {
   e(item) {   
     this.navCtrl.push(SubprodutosPage);
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SupermercadosPage');
-  }
+ 
 
 }

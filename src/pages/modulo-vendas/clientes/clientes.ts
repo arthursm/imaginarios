@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController, AlertController } from 'ionic-angular';
-import { FinanceiroPage } from '../clientes/venda/financeiro/financeiro';
 import { PedidoPage } from '../clientes/venda/pedido/pedido/pedido';
-import { InformacoesPage } from '../clientes/venda/informacoes/informacoes';
-import { StorageProvider } from "../../../providers/storage/storage";
-import { RecuperarDadosProvider } from "../../../providers/recuperar-dados/recuperar-dados";
+import { InformacoesPage } from '../clientes/venda/informacoes/informacoes'; 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
@@ -28,9 +25,8 @@ export class ClientesPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public actionSheetCtrl: ActionSheetController,
-    public alertCtrl: AlertController,
-    public storage: StorageProvider,
-    public dados: RecuperarDadosProvider) {
+    public alertCtrl: AlertController
+  ) {
     this.db = firebase.firestore();
     this.initializeItems(); 
     this.loadData()
@@ -72,8 +68,6 @@ export class ClientesPage {
   }
 
   initializeItems() {
-
-    this.items = this.storage.listaClientes
   }
  
 

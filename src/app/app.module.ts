@@ -10,9 +10,7 @@ import { CustomFormsModule } from 'ng2-validation';
 
 import { MyApp } from './app.component';
  
-import { VendasPage } from '../pages/modulo-vendas/vendas/vendas'; 
-import { IonicStorageModule } from '@ionic/storage';
-import { StorageProvider } from '../providers/storage/storage';
+import { VendasPage } from '../pages/modulo-vendas/vendas/vendas';  
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http"
 import { BrMaskerModule } from 'brmasker-ionic-3';
@@ -69,8 +67,7 @@ firebase.initializeApp({
     BrowserModule,
     IonicModule.forRoot(MyApp), 
     CustomFormsModule,
-    FormsModule,
-    IonicStorageModule.forRoot(),
+    FormsModule, 
     HttpClientModule,
     BrMaskerModule,
     HttpModule,
@@ -102,8 +99,7 @@ firebase.initializeApp({
     StatusBar,
     SplashScreen, 
     { provide: ErrorHandler, useClass: IonicErrorHandler }, 
-    ScreenOrientation,
-    StorageProvider, 
+    ScreenOrientation, 
     HttpClient, 
     RecuperarDadosProvider,
   ]

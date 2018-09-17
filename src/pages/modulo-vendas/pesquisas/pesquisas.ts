@@ -11,10 +11,7 @@ export class PesquisasPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PesquisasPage');
-  }
+ 
   superm(){    
     this.navCtrl.push(SupermercadosPage);
   }

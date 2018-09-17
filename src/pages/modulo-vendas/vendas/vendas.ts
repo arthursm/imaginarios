@@ -5,9 +5,7 @@ import { PedidosPage } from '../pedidos/pedidos';
 import { PesquisasPage } from '../pesquisas/pesquisas';
 import { ProdutosPage } from '../produtos/produtos';
 import { SincronizarPage } from '../sincronizar/sincronizar';
-import { TabelasPage } from '../tabelas/tabelas';
-import { StorageProvider } from '../../../providers/storage/storage'; 
-import { Storage } from "@ionic/storage";
+import { TabelasPage } from '../tabelas/tabelas'; 
 
 /**
  * Generated class for the VendasPage page.
@@ -23,8 +21,7 @@ import { Storage } from "@ionic/storage";
 })
 export class VendasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public storageProvider: StorageProvider,public storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   /* Funções de link para outras páginas */
@@ -52,13 +49,5 @@ export class VendasPage {
   linkTabelas() {
     this.navCtrl.push(TabelasPage);
   }
-
-  logout() {
-   // this.storageProvider.delete(this.storageProvider.chaveLogin);
-   this.storage.clear();
-    this.navCtrl.popToRoot()
-  }
-
-
-
+ 
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { StorageProvider } from '../../../providers/storage/storage';
+import { IonicPage, NavController, NavParams } from 'ionic-angular'; 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
@@ -19,8 +18,8 @@ export class ProdutosPage {
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams, 
-    public storageProvider: StorageProvider,
+    public navParams: NavParams,  
+    // public dados: RecuperarDadosProvider
   ) {
     this.db = firebase.firestore();
     this.initializeItems() 
@@ -28,7 +27,7 @@ export class ProdutosPage {
   }
   
   loadData() {
-    this.recuperarDadosClientes("usuarios").then((e) => {
+    this.recuperarDadosClientes("clientesGrupoProdutos").then((e) => {
       // this.data = e;  
       // console.log(this.data);
       // console.log(this.data[0]);
@@ -37,7 +36,7 @@ export class ProdutosPage {
 
   recuperarDadosClientes(collection: String) {
     return new Promise((resolve, reject) => {
-      this.db.collection(collection).get().then(
+      this.db.collection(collection).limit(15).get().then(
         (querySnapshot) => {
           let arr = [];
           querySnapshot.forEach(
@@ -65,8 +64,7 @@ export class ProdutosPage {
   }
 
 
-  initializeItems() {
-    this.items = this.storageProvider.listaVendasProdutos
+  initializeItems() { 
   }
 
   e(item) {
