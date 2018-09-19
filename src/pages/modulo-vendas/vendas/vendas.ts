@@ -22,10 +22,11 @@ import { TabelasPage } from '../tabelas/tabelas';
 export class VendasPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    var vfirstName  = 'ARTHUR';
   }
 
   /* Funções de link para outras páginas */
-
+  
   linkClientes() {
     this.navCtrl.push(ClientesPage);
   }

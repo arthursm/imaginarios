@@ -1,9 +1,5 @@
 page-vendas {
 
-    .titulo{
-        margin-left: 10vw;  
-        width: 50vw; 
-    }
     .grid{
         margin-top: 13vh;
         margin-left: 4vw;
@@ -51,7 +47,7 @@ page-vendas {
         }
     }
     .column {
-        background: #135F8C;
+        background: #004f8b;
         border: 1px solid #ccc;
         border-radius: 5%;
         color: white;
@@ -99,11 +95,16 @@ page-vendas {
     #disabled{
         background: rgb(88, 88, 88);
     }
+    .titulo{
+        margin-left: 5vw;  
+        width: 70vw;  
+        font-size: 10vh;
+    }
     .quit{ 
         font-size: 10vw;
         color: white;
         margin-top:-4.5vh;
-        margin-left:30vw;
+        margin-left:35vw;
         position: absolute;
-    }
+    } 
 }

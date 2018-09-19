@@ -1,18 +1,25 @@
-<ion-toolbar>
-  <ion-navbar color="tijuca">
-    <ion-title padding>Login</ion-title>
-  </ion-navbar>
-</ion-toolbar>
-
-
 <ion-content padding>
-
-  <div class="geral" style="margin-top: 25%">
-    <img src="../assets/images/tijuca-logo.png" class="img"> 
-  </div>  
-  <div class="google">
-  <button ion-button full color="tijuca"  (click)="loginGoogle()" icon-start>
-    <ion-icon name="logo-googleplus" ></ion-icon> Fazer login com o Google </button>  
-  <!-- (click)="verificarLogin(usuario, senha)" -->
+  <div *ngIf="isLoggedIn; else loginTemplate">
+    <h1>Bem-vindo, {{displayName}}!</h1>
+    <p>Email: {{email}}<br>
+      Sobrenome: {{familyName}}<br>
+      Nome: {{givenName}}<br>
+      ID do usuário: {{userId}}</p>
+    <p><ion-avatar item-left>
+        <img src="{{imageUrl}}">
+      </ion-avatar></p>
+    <p><button ion-button (click)="logout()">Terminar sessão</button></p>
   </div>
+
+  <ng-template #loginTemplate>
+    <div class="geral" style="margin-top: 25%;">
+      <img src="../assets/images/tijuca-logo.png" class="img">
+    </div>
+    <div style="padding-top:35vh;"> 
+      <button ion-button full color="tijuca"  (click)="login()" icon-start>
+        <ion-icon name="logo-googleplus" ></ion-icon>
+        Fazer login com o Google
+      </button>
+    </div>
+  </ng-template>
 </ion-content>

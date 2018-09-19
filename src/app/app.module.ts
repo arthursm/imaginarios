@@ -14,8 +14,7 @@ import { VendasPage } from '../pages/modulo-vendas/vendas/vendas';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http"
 import { BrMaskerModule } from 'brmasker-ionic-3';
-import { LoginPage } from '../pages/login/login';
-import { RecuperarDadosProvider } from '../providers/recuperar-dados/recuperar-dados';
+import { LoginPage } from '../pages/login/login'; 
 import { ClientesPage } from '../pages/modulo-vendas/clientes/clientes';  
 import { ProdutosPage } from '../pages/modulo-vendas/produtos/produtos';
 import { PesquisasPage } from '../pages/modulo-vendas/pesquisas/pesquisas';
@@ -32,6 +31,10 @@ import { InformacoesPage } from '../pages/modulo-vendas/clientes/venda/informaco
 import { IncluirPedidoPage } from '../pages/modulo-vendas/clientes/venda/pedido/incluir-pedido/incluir-pedido';
 import { ItensPage } from '../pages/modulo-vendas/clientes/venda/pedido/itens/itens';
 import * as firebase from 'firebase';
+
+
+import { NativeStorage } from '@ionic-native/native-storage';
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCQJ9BoVvSFHfKGJAqLhivOx6wu6lGROH8",
@@ -97,11 +100,11 @@ firebase.initializeApp({
   ],
   providers: [
     StatusBar,
-    SplashScreen, 
+    SplashScreen,  
+    NativeStorage,
     { provide: ErrorHandler, useClass: IonicErrorHandler }, 
     ScreenOrientation, 
-    HttpClient, 
-    RecuperarDadosProvider,
+    HttpClient 
   ]
 })
 export class AppModule { }
