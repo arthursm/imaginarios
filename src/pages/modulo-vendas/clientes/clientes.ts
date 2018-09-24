@@ -20,6 +20,8 @@ export class ClientesPage {
   id: string[];
   private db: any;
   data = [];
+  indiceSelecionado;
+
 
   constructor(
     public navCtrl: NavController,
@@ -53,6 +55,41 @@ export class ClientesPage {
               arr.push(obj);
               // this.data.push(obj);
             }))
+
+                // for (let i = 0; i < arr.length; i++) {
+                //   const element = arr[i];
+                //   console.log(arr[i].bairro)
+                // } 
+
+            this.data = arr;
+            //console.log(this.data)
+          if (arr.length > 0) { 
+          } else {
+            console.log("Documento não encontrado");
+            resolve(null);
+          }
+        }
+      ).catch((error: any) => {
+        reject(error);
+      });
+    })
+  }
+
+
+
+  recuperarDadosInformacoes(collection: String) {
+    return new Promise((resolve, reject) => {
+      this.db.collection(collection).limit(15).get().then(
+        (querySnapshot) => {
+          let arr = [];
+          querySnapshot.forEach(
+            (function (doc) {
+              var obj = JSON.parse(JSON.stringify(doc.data()));
+              obj.$key = doc.id              
+              // console.log(obj) 
+              arr.push(obj);
+              // this.data.push(obj);
+            }))
             // console.log(arr[1].bairro);
             this.data = arr;
           if (arr.length > 0) { 
@@ -67,9 +104,13 @@ export class ClientesPage {
     })
   }
 
+
   initializeItems() {
   }
  
+  e(i){
+    this.indiceSelecionado = i;     
+  }
 
   getItems(ev: any) {
 
@@ -104,7 +145,13 @@ export class ClientesPage {
           text: 'Informações',
           role: 'destructive',
           handler: () => {
-            this.navCtrl.push(InformacoesPage);
+           
+            //this.recuperarDadosInformacoes(this.idSelecionado)
+            // console.log(this.data)
+            this.navCtrl.push(InformacoesPage, { 
+              id: this.data[this.indiceSelecionado]
+            });
+            
 
           }
         },

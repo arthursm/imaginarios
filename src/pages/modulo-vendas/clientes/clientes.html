@@ -14,10 +14,10 @@
   <br>
   <br>
   <div style="margin-top:5vh;">
-    <div *ngFor="let item of data">
+    <div *ngFor="let item of data;  let i= index">
 
-      <ng-template [ngIf]="item.limiteCredito >= 1000" [ngIfElse]="limiteBaixo">
-        <ion-card class="redcard" (click)="e(item.codigoCliente); presentActionSheet()">
+      <!-- <ng-template [ngIf]="item.limiteCredito >= 1000" [ngIfElse]="limiteBaixo"> -->
+        <ion-card class="redcard" (click)="e(i); presentActionSheet()">
           <ion-card-header class="redcard">
             {{item.nome}}
           </ion-card-header>
@@ -28,9 +28,9 @@
             <span class="cod">{{item.codigoCliente}}</span>
           </ion-card-content>
         </ion-card>
-      </ng-template>
+      <!-- </ng-template> -->
 
-      <ng-template #limiteBaixo>
+      <!-- <ng-template #limiteBaixo>
 
 
         <ion-card (click)="e(item.codigoCliente); presentActionSheet()">
@@ -40,14 +40,14 @@
           <ion-card-content>
             <span class="cnpj">{{item.cnpj}}</span>
 
-            <!-- <span>{{item.limite}}</span> -->
+           <span>{{item.limite}}</span> 
 
             <span class="cod">{{item.codigoCliente}}</span>
           </ion-card-content>
         </ion-card>
 
 
-      </ng-template>
+      </ng-template> -->
 
     </div>
   </div>

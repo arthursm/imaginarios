@@ -17,7 +17,13 @@ export class InformacoesPage {
   }
 
   items: any;
+  data: any;
 
+  ionViewDidEnter(){
+    this.data = this.navParams.get("id")
+    console.log(this.data.nome)
+  }
+  
   initializeItems() {
     this.items = [{
       "cliente": "Fulano",
